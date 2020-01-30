@@ -1,11 +1,12 @@
 # Django-Blog
 
-Install Dependencies:
-  pip install -r requirements.txt
+## **Install Dependencies:**
+  `pip install -r requirements.txt`
   
-Set Databases:
-  ./manage.py makemigrations
-  ./manage.py migrate
+## **Set Databases:**
+  `./manage.py makemigrations`
+  
+  `./manage.py migrate`
  
-Create Superuser:
-  ./manage.py createsuperuser
+## **Create Superuser:**
+  `./manage.py createsuperuser`
