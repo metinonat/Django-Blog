@@ -1,0 +1,47 @@
+{% extends 'base/layout.html' %}
+
+
+{% block title %}
+    
+{% endblock title %}
+    
+
+
+{% block content %}
+
+    {% if messages %}
+        
+        {% for message in messages %}
+        <pstyle ="color:red">{{message}}</p>
+            
+        {% endfor %}
+            
+    {% endif %}
+        
+
+    <h1>{{article.header}} </h1> <br>
+        
+        <div>
+            {{article.content}}
+        </div>
+        
+        <p>publish date {{article.created}}</p>
+        <p>update date {{article.updated}}</p>
+        
+        <br><br>
+    <h2>Make a comment</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">comment</button>
+        </form>
+    <h3>Comments:</h3>
+
+        
+        {% for comment in comments %}
+            <h3>{{comment.header}}</h3>
+            <br>
+            <div>{{comment.content}}</div>
+        {% endfor %}
+{% endblock content %}
+    

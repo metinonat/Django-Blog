@@ -1,0 +1,21 @@
+{% extends 'base/layout.html' %}
+
+
+{% block title %}
+    Register
+{% endblock title %}
+    
+
+
+{% block content %}
+    <form method='post'>
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <button class='btn' type='submit'>
+            Register
+        </button>
+
+    </form>
+{% endblock content %}
+    

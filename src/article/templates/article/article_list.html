@@ -1,0 +1,31 @@
+{% extends 'base/layout.html' %}
+
+
+{% block title %}
+    Articles
+{% endblock title %}
+    
+
+
+{% block content %}
+    <ul>
+    {% for article in articles %}
+        
+        <li>
+        <p>{{article.header}}</p>
+        <p>by {{article.owner}}</p>
+        <p>Last modified: {{article.updated}}</p>
+        
+        {% if article.draft %}
+            <p>[DRAFT]</p>
+        {% endif %}
+            
+        </li>
+    {% empty %}
+        <li>No articles published yet.</li>
+    {% endfor %}
+        
+    </ul>    
+
+{% endblock content %}
+    

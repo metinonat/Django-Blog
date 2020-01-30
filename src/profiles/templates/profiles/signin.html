@@ -1,0 +1,29 @@
+{% extends 'base/layout.html' %}
+
+
+{% block title %}
+    Sign In 
+{% endblock title %}
+    
+
+
+{% block content %}
+    
+    {% if messages %}
+        
+        {% for message in messages %}
+            <p style="color:red ! important">{{message}}</p>
+            
+        {% endfor %}
+            
+    {% endif %}
+        
+    <form method='post'>
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit">Login</button>
+
+    </form>
+{% endblock content %}
+    
